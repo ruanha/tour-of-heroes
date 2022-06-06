@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap, catchError, of } from 'rxjs';
 import { MessageService } from '../shared/messages/message.service';
-import { Quest } from '../models/quest';
+import { Quest } from './quest';
 import { ErrorService } from '../shared/error.service';
 
 @Injectable({
