@@ -1,1 +1,9 @@
-<p>quest-details works!</p>
+<h2>Quest Details</h2>
+<div *ngIf="quest">
+    <p>Quest: {{ quest.name }}</p>
+    <p>Prize: {{ quest.prize }}</p>
+    <div>
+        <h3>assign a hero:</h3>
+        <app-heroes-list></app-heroes-list>
+    </div>
+</div>

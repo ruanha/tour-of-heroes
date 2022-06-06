@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
 import { QuestsComponent } from './quests/quests/quests.component';
 import { QuestDetailsComponent } from './quests/quest-details/quest-details.component';
+import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { QuestDetailsComponent } from './quests/quest-details/quest-details.comp
     DashboardComponent,
     HeroSearchComponent,
     QuestsComponent,
-    QuestDetailsComponent
+    QuestDetailsComponent,
+    HeroesListComponent
   ],
   imports: [
     BrowserModule,

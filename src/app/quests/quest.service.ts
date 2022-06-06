@@ -29,6 +29,15 @@ export class QuestService {
       );
   }
 
+  getQuest(id: number): Observable <Quest> {
+    const url = `${this.questsUrl}/${id}`;
+    return this.http.get<Quest>(url)
+      .pipe(
+        tap(_ => this.log(`fetched quest id=${id}`)),
+        catchError(this.errorService.handleError<Quest>(`getQuest id=${id}`))
+      )
+  }
+
   /** Log a QuestService message with the MessageService */
   private log(message: string) {
     this.messageService.add(`QuestService: ${message}`);
