@@ -7,5 +7,5 @@ export interface Quest {
     prize: number;
     xp: number;
     time: number;
-    assignedHero?: Hero
+    assignedHero?: Hero;
 }
