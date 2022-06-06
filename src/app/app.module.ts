@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { QuestsComponent } from './quests/quests.component';
+import { QuestDetailsComponent } from './quest-details/quest-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { QuestsComponent } from './quests/quests.component';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    QuestsComponent
+    QuestsComponent,
+    QuestDetailsComponent
   ],
   imports: [
     BrowserModule,
