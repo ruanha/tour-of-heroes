@@ -2,7 +2,7 @@
 
 <ul class="quests">
     <li *ngFor="let quest of quests">
-        <a routerLink="/quests">
+        <a routerLink="/quests/{{quest.id}}">
             <span class="badge">{{quest.id}}</span> {{quest.name}}
         </a>
     </li>
