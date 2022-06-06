@@ -1,4 +1,4 @@
-import { Hero } from "./hero";
+import { Hero } from "../heroes/hero";
 
 export interface Quest {
     id: number;

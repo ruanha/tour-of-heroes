@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Quest } from '../quest';
+import { Quest } from '../../models/quest';
 import { QuestService } from '../quest.service';
 
 @Component({

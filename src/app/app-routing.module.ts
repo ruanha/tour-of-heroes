@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './heroes/heroes.component';
+import { HeroesComponent } from './heroes/heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailsComponent } from './hero-details/hero-details.component';
-import { QuestsComponent } from './quests/quests.component';
-import { QuestDetailsComponent } from './quest-details/quest-details.component';
+import { HeroDetailsComponent } from './heroes/hero-details/hero-details.component';
+import { QuestsComponent } from './quests/quests/quests.component';
+import { QuestDetailsComponent } from './quests/quest-details/quest-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

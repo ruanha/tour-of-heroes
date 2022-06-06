@@ -1,4 +1,4 @@
-import { Quest } from './quest';
+import { Quest } from '../models/quest';
 
 export const QUESTS: Quest[] = [
   { id: 1, name: 'Chess tournament', description: 'Become the new hero-chess champ!', prize: 10, time: 5, xp: 1000 },
