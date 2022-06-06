@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/in-memory-data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes/heroes.component';
@@ -15,7 +19,6 @@ import { HeroSearchComponent } from './heroes/hero-search/hero-search.component'
 import { QuestsComponent } from './quests/quests/quests.component';
 import { QuestDetailsComponent } from './quests/quest-details/quest-details.component';
 import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,8 +33,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeroesListComponent
   ],
   imports: [
+    MatAutocompleteModule,
+    MatFormFieldModule,
     BrowserModule,
     FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
 
@@ -42,7 +49,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       InMemoryDataService, { dataEncapsulation: false }
     ),
 
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
