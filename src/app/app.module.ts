@@ -15,6 +15,7 @@ import { HeroSearchComponent } from './heroes/hero-search/hero-search.component'
 import { QuestsComponent } from './quests/quests/quests.component';
 import { QuestDetailsComponent } from './quests/quest-details/quest-details.component';
 import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component'
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
