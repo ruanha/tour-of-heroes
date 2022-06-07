@@ -18,6 +18,7 @@ export class QuestDetailsComponent implements OnInit {
   heroes: Hero[] = [];
   myControl = new FormControl('');
   filteredOptions!: Observable<Hero[]>;
+  selectedHero!: Hero;
 
   constructor(
     private questService: QuestService,
@@ -53,5 +54,12 @@ export class QuestDetailsComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
+  }
+
+  save(): void {
+    if (this.quest) {
+      this.quest.assignedHero = this.selectedHero;
+      this.questService.updateQuest(this.quest).subscribe()
+    }
   }
 }

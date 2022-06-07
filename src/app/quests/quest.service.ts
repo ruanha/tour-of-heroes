@@ -38,6 +38,14 @@ export class QuestService {
       )
   }
 
+  /** PUT: update the quest on the server */
+  updateQuest(quest: Quest): Observable<any> {
+    return this.http.put(this.questsUrl, quest, this.httpOptions).pipe(
+      tap(_ => this.log(`updated queest id=${quest.id}`)),
+      catchError(this.errorService.handleError<any>('updateQuest'))
+    );
+  }
+
   /** Log a QuestService message with the MessageService */
   private log(message: string) {
     this.messageService.add(`QuestService: ${message}`);
