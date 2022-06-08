@@ -1,0 +1,18 @@
+<h2>Quest Details</h2>
+<div *ngIf="quest">
+    <p>Quest: {{ quest.name }}</p>
+    <p>Prize: {{ quest.prize }}</p>
+    <p>Assigned Hero: {{ quest?.assignedHero?.name }}</p>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Assignee</mat-label>
+          <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="selectedHero">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option.name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <button mat-button (click)="save()">Assign Hero</button>
+    </form>
+</div>

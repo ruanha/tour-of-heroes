@@ -1,17 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from './shared/in-memory-data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailsComponent } from './hero-details/hero-details.component';
-import { MessagesComponent } from './messages/messages.component';
+import { HeroesComponent } from './heroes/heroes/heroes.component';
+import { HeroDetailsComponent } from './heroes/hero-details/hero-details.component';
+import { MessagesComponent } from './shared/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
+import { QuestsComponent } from './quests/quests/quests.component';
+import { QuestDetailsComponent } from './quests/quest-details/quest-details.component';
+import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +27,18 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailsComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    QuestsComponent,
+    QuestDetailsComponent,
+    HeroesListComponent
   ],
   imports: [
+    MatAutocompleteModule,
+    MatFormFieldModule,
     BrowserModule,
     FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
 
@@ -33,7 +47,9 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
